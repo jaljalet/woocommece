@@ -1,1 +1,1 @@
-# wordpress-custom-functions
+Персональная база функций php wordpress для быстрого использования
