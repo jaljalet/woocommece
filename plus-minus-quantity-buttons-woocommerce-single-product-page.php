@@ -7,28 +7,28 @@
 // -------------
 // 1. Show Buttons
   
-add_action( 'woocommerce_before_add_to_cart_quantity', 'silva_display_quantity_plus' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'your_theme_display_quantity_plus' );
   
-function silva_display_quantity_plus() {
+function your_theme_display_quantity_plus() {
    echo '<button type="button" class="plus" >+</button>';
 }
   
-add_action( 'woocommerce_after_add_to_cart_quantity', 'silva_display_quantity_minus' );
+add_action( 'woocommerce_after_add_to_cart_quantity', 'your_theme_display_quantity_minus' );
   
-function silva_display_quantity_minus() {
+function your_theme_display_quantity_minus() {
    echo '<button type="button" class="minus" >-</button>';
 }
  
 // Note: to place minus @ left and plus @ right replace above add_actions with:
-// add_action( 'woocommerce_before_add_to_cart_quantity', 'silva_display_quantity_minus' );
-// add_action( 'woocommerce_after_add_to_cart_quantity', 'silva_display_quantity_plus' );
+// add_action( 'woocommerce_before_add_to_cart_quantity', 'your_theme_display_quantity_minus' );
+// add_action( 'woocommerce_after_add_to_cart_quantity', 'your_theme_display_quantity_plus' );
   
 // -------------
 // 2. Trigger jQuery script
   
-add_action( 'wp_footer', 'silva_add_cart_quantity_plus_minus' );
+add_action( 'wp_footer', 'your_theme_add_cart_quantity_plus_minus' );
   
-function silva_add_cart_quantity_plus_minus() {
+function your_theme_add_cart_quantity_plus_minus() {
    // Only run this on the single product page
    if ( ! is_product() ) return;
    ?>
