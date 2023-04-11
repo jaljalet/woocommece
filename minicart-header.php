@@ -1,5 +1,5 @@
 
-
+<?php
 // Minicart Header
 if (!function_exists('your_theme_mini_cart')) :
   function your_theme_mini_cart($fragments) {
