@@ -1,8 +1,8 @@
 
 <?php
 // Minicart Header
-if (!function_exists('your_theme_mini_cart')) :
-  function your_theme_mini_cart($fragments) {
+if (!function_exists('yourdomain_mini_cart')) :
+  function yourdomain_mini_cart($fragments) {
 
     ob_start();
     $count = WC()->cart->cart_contents_count; ?>
@@ -17,7 +17,7 @@ if (!function_exists('your_theme_mini_cart')) :
 
     return $fragments;
   }
-  add_filter('woocommerce_add_to_cart_fragments', 'bs_mini_cart');
+  add_filter('woocommerce_add_to_cart_fragments', 'yourdomain_mini_cart');
 
 endif;
 // Minicart Header End
