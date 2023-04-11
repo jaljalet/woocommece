@@ -1,5 +1,5 @@
 <?php
-function your_theme_hide_shipping_when_free_is_available( $rates ) {
+function yourdomain_hide_shipping_when_free_is_available( $rates ) {
   $free = array();
   foreach ( $rates as $rate_id => $rate ) {
     if ( 'free_shipping' === $rate->get_method_id() ) {
@@ -8,4 +8,4 @@ function your_theme_hide_shipping_when_free_is_available( $rates ) {
   }
   return ! empty( $free ) ? $free : $rates;
 }
-add_filter( 'woocommerce_package_rates', 'your_theme_hide_shipping_when_free_is_available', 100 );
+add_filter( 'woocommerce_package_rates', 'yourdomain_hide_shipping_when_free_is_available', 100 );
