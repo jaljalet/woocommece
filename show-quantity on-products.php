@@ -3,9 +3,9 @@
  *	Show Quantity On Products
  */
 
-add_action( 'woocommerce_before_add_to_cart_quantity', 'your_theme_echo_qty_front_add_cart' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'yourdomain_echo_qty_front_add_cart' );
  
-function your_theme_echo_qty_front_add_cart() {
+function yourdomain_echo_qty_front_add_cart() {
  echo '<div class="qty-txt">Quantity: </div>'; 
 }
 
@@ -17,28 +17,28 @@ function your_theme_echo_qty_front_add_cart() {
 // -------------
 // 1. Show Buttons
   
-add_action( 'woocommerce_before_add_to_cart_quantity', 'your_theme_display_quantity_plus' );
+add_action( 'woocommerce_before_add_to_cart_quantity', 'yourdomain_display_quantity_plus' );
   
-function your_theme_display_quantity_plus() {
+function yourdomain_display_quantity_plus() {
    echo '<button type="button" class="minus" >-</button>';
 }
   
-add_action( 'woocommerce_after_add_to_cart_quantity', 'your_theme_display_quantity_minus' );
+add_action( 'woocommerce_after_add_to_cart_quantity', 'yourdomain_display_quantity_minus' );
   
-function your_theme_display_quantity_minus() {
+function yourdomain_display_quantity_minus() {
    echo '<button type="button" class="plus" >+</button>';
 }
  
 // Note: to place minus @ left and plus @ right replace above add_actions with:
-// add_action( 'woocommerce_before_add_to_cart_quantity', 'your_theme_display_quantity_minus' );
-// add_action( 'woocommerce_after_add_to_cart_quantity', 'your_theme_display_quantity_plus' );
+// add_action( 'woocommerce_before_add_to_cart_quantity', 'yourdomain_display_quantity_minus' );
+// add_action( 'woocommerce_after_add_to_cart_quantity', 'yourdomain_display_quantity_plus' );
   
 // -------------
 // 2. Trigger jQuery script
   
-add_action( 'wp_footer', 'your_theme_add_cart_quantity_plus_minus' );
+add_action( 'wp_footer', 'yourdomain_add_cart_quantity_plus_minus' );
   
-function your_theme_add_cart_quantity_plus_minus() {
+function yourdomain_add_cart_quantity_plus_minus() {
    ?>
       <script type="text/javascript">
            
