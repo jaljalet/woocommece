@@ -1,3 +1,4 @@
+<?php
 // Edit WooCommerce dropdown menu item of shop page//
 // Options: menu_order, popularity, rating, date, price, price-desc
  
