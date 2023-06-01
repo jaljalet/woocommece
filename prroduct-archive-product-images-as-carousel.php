@@ -1,6 +1,6 @@
 <?php
 // Product Archive Product images as carousel
-	function thelifecoshop_woocommerce_product_archive_slider() {
+	function your_theme_woocommerce_product_archive_slider() {
 		global $product;
 		$post_thumbnail_id = $product->get_image_id();
 		$attachment_ids = $product->get_gallery_image_ids();
@@ -18,4 +18,4 @@
 		</a>
 		<?php
 	}	
-	add_action( 'woocommerce_before_shop_loop_item_title', 'thelifecoshop_woocommerce_product_archive_slider', 20 );
+	add_action( 'woocommerce_before_shop_loop_item_title', 'your_theme_woocommerce_product_archive_slider', 20 );
