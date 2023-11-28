@@ -1,3 +1,4 @@
+<?php
 function yourdomain_register_custom_order_status() {
   // Status must start with "wc-"!
   register_post_status( 'wc-transfer', array(
