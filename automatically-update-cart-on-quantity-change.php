@@ -1,11 +1,11 @@
 <?php
 /**
- * Snippet Name:	WooCommerce Automatically Update Cart On Quantity Change
+ * Snippet Name: WooCommerce Automatically Update Cart On Quantity Change
  */
 
 // First, hide the Update Cart button
-add_action( 'wp_head', 'yourdomain_hide_update_cart_button' );
-function ecommercehints_hide_update_cart_button() { ?>
+add_action( 'wp_head', 'thelifecoshop_hide_update_cart_button' );
+function thelifecoshop_hide_update_cart_button() { ?>
 	<style>
 		button[name="update_cart"], input[name="update_cart"] {
 			display: none;
@@ -14,19 +14,14 @@ function ecommercehints_hide_update_cart_button() { ?>
 <?php }
 
 // Second, add the jQuery to update the cart automaitcally on quantity change
-add_action( 'wp_footer', 'yourdomain_update_cart_on_quantity_change');
-function yourdomain_update_cart_on_quantity_change() { ?>
-	<script>
-	jQuery( function( $ ) {
-		let timeout;
-		$('.woocommerce').on('change', 'input.qty', function(){
-			if ( timeout !== undefined ) {
-				clearTimeout( timeout );
-			}
-			timeout = setTimeout(function() {
-				$("[name='update_cart']").trigger("click");
-			}, 500 ); // 500 being MS (half a second)
-		});
-	} );
-	</script>
-<?php }
+add_action('template_redirect', 'thelifecoshop_cart_js_script');
+function thelifecoshop_cart_js_script() {
+	if ( ! is_cart() ) return;
+	wc_enqueue_js( "var timeout;
+	$(document.body).on('change input', 'input.qty', function(){
+		if ( timeout !== undefined ) clearTimeout( timeout );
+		timeout = setTimeout(function() {
+			$('[name=update_cart]').trigger('click'); // trigger cart update
+		}, 800 );
+	});" );
+}
