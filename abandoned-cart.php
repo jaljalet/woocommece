@@ -8,8 +8,6 @@ for use this code need WooCommerce Cart Abandonment Recovery by CartFlows plugin
 /* ABANDONED CART START */
 
 	// 1. AUTHORIZE CHECK FUNCTION
-
-	// 1. ФУНКЦИЯ ПРОВЕРКИ АВТОРИЗАЦИИ
 	function abandoned_carts_permission_check() {
 		$user_id = get_current_user_id();
 
@@ -26,7 +24,7 @@ for use this code need WooCommerce Cart Abandonment Recovery by CartFlows plugin
 		return true;
 	}
 
-	// 2. РЕГИСТРАЦИЯ API
+	// 2. REGISTER API
 	add_action('rest_api_init', function () {
 		register_rest_route('wc/v3', '/abandoned-carts', [
 			'methods'  => 'GET',
